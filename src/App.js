@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Rules } from "./components/Rules";
+import { Route, Routes} from "react-router-dom";
+import { MainLayOut } from "./layouts/MainLayOut";
+import { Start } from "./components/Start";
+import { AudioPage } from "./components/AudioPage";
+import { Game } from "./components/Game";
 
 function App() {
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="app-h1">BINGO APP</h1>
+      <Routes>
+        <Route path="/" element={<MainLayOut/>}>
+          <Route index element={<Start/>}/>
+          <Route path="rules" element={<Rules/>}/>
+          <Route path="game" element={<Game/>}/>
+        </Route>
+      </Routes>
+      <AudioPage/>
     </div>
   );
 }

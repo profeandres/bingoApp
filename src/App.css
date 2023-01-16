@@ -1,38 +1,376 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400;500;600;700;800;900&family=Varela+Round&display=swap");
+
+/* 
+FONT FAMILIES IMPORTED
+
+font-family: 'Bebas Neue', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Heebo', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'M PLUS Rounded 1c', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Varela Round', sans-serif;
+
+*/
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(https://cdn.pixabay.com/photo/2022/07/12/20/38/bingo-7318132_960_720.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app-h1 {
+  font-size: 50px;
+  background: rgba(17, 35, 116, 0.719);
   text-align: center;
+  color: white;
+  text-shadow: 1px 1px 0px white;
+  animation: bingo 0.7s ease-in-out 0s infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@keyframes bingo {
+  from {
+    text-shadow: 1px 1px 5px white;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  to {
+    text-shadow: 1px 1px 0px white;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app-container {
+  margin: 0 auto;
+  width: 90vw;
+  height: 80vh;
+  background: rgba(17, 35, 116, 0.719);
+  position: relative;
+}
+
+.app-btn-empezar {
+  text-decoration: none;
+  text-align: center;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgb(25, 43, 119);
+  border-radius: 500px;
+  border: 1px black solid;
+  transform: scale(1.5);
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-btn-empezar:hover {
+  background: rgb(17, 36, 122);
 }
 
-@keyframes App-logo-spin {
+.app-btn-empezar:active {
+  background: rgba(7, 26, 114);
+}
+
+.rules {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 70vh;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: white;
+  border-radius: 5%;
+  padding: 10px;
+}
+
+.rules > p {
+  margin: 0 auto;
+  width: 80%;
+  font-size: 30px;
+  text-align: justify;
+}
+
+.rules > img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.app-btn {
+  width: 20vw;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  padding: 10px 0px;
+}
+
+.next {
+  background: rgba(7, 26, 114);
+  color: white;
+  border: none;
+}
+
+.game {
+  background: rgb(8, 204, 34);
+  color: white;
+  border: none;
+  animation: game 1s linear 0s infinite alternate;
+}
+
+@keyframes game {
   from {
-    transform: rotate(0deg);
+    transform: scale(1);
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1.2);
+  }
+}
+
+.bingo-game {
+  width: 80vw;
+  height: 70vh;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: white;
+  border-radius: 5%;
+  padding: 10px;
+}
+
+.bingo-game-header {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bingo-game-title {
+  height: 100px;
+}
+
+.bingo-game-img {
+  height: 100px;
+}
+
+.balotas-container {
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 40%;
+}
+
+.balotas {
+  padding: 5px;
+  border: 1px black solid;
+  width: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+.on {
+  background: yellow;
+}
+
+.off {
+  background: white;
+}
+
+.playerCartons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
+  overflow: hidden;
+}
+
+.carton-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.carton-titulo {
+  position: absolute;
+  left: -50px;
+  top: -20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 0;
+  background: rgb(53, 231, 53);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.carton-bingo {
+  width: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.carton-bingo > div {
+  text-align: center;
+  border: 1px solid black;
+  line-height: 2;
+  background: white;
+}
+
+.carton {
+  width: 200px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  grid-auto-flow: column;
+  position: relative;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.carton > div {
+  text-align: center;
+  border: 1px solid black;
+  line-height: 2;
+}
+
+.carton-casilla:hover {
+  /* background: rgb(207, 207, 207); */
+  box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.719),
+    inset 10px 10px 5px rgba(70, 70, 70, 0.555);
+  cursor: pointer;
+}
+
+.rival {
+  background: red;
+}
+
+.yo {
+  background: rgb(53, 231, 53);
+}
+
+
+.gameover{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: column;
+  background: white;
+  position: absolute;
+  top:0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: bottom;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* CSS */
+.btn-playAgain {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-playAgain:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.btn-exit {
+  background-color: #fbc2c2;
+  border-radius: 100px;
+  box-shadow: rgba(187, 44, 44, 0.2) 0 -25px 18px -14px inset,rgba(187, 44, 44, 0.15) 0 1px 2px,rgba(187, 44, 44, 0.15) 0 2px 4px,rgba(187, 44, 44, 0.15) 0 4px 8px,rgba(187, 44, 44, 0.15) 0 8px 16px,rgba(187, 44, 44, 0.15) 0 16px 32px;
+  color: red;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-exit:hover {
+  box-shadow: rgba(187, 44, 44, 0.35) 0 -25px 18px -14px inset,rgba(187, 44, 44, 0.25) 0 1px 2px,rgba(187, 44, 44, 0.25) 0 2px 4px,rgba(187, 44, 44, 0.25) 0 4px 8px,rgba(187, 44, 44, 0.25) 0 8px 16px,rgba(187, 44, 44, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.rival>div.bingo{
+  display: none;
+}
+
+.yo>div.bingo{
+  position: absolute;
+  background: rgb(53, 231, 53);
+  bottom: 0;
+  left: -50px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  animation: bingo-color infinite linear ;
+}
+
+.yo>div.bingo:hover{
+  cursor: pointer;
+  background: rgb(23, 201, 23);
+}
+
+@keyframes bingo-color{
+  from{
+    background: rgb(53, 231, 53);
+  }
+  to{
+    background: rgb(53, 94, 231);
   }
 }
