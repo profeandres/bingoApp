@@ -99,26 +99,28 @@ export const Game = () => {
             <div className="bingo-game-balotera-balota">
               <h2>Balota</h2>
               {con > 0 && (
-                <>
+                <div className="bingo-game-balotera-newbalota">
                   <div
                     style={{"background":letras[balotasA[id_new - 1].letter]}}
                     className="bingo-game-balotera-balota-let"
                   >
-                    {balotasA[id_new - 1].letter}
+                    <p className="letra">{balotasA[id_new - 1].letter}</p>
+                    <p className="num">{balotasA[id_new - 1].id}</p>
                   </div>
                   <div
-                    style={{ background: letras[balotasA[id_new - 1].letter] }}
+                    onClick={handleBalotas}
                     className="bingo-game-balotera-balota-num"
                   >
-                    {balotasA[id_new - 1].id}
+                    nueva Balota
                   </div>
-                </>
+                </div>
               )}
             </div>
           </div>
-
-          <button onClick={handleBalotas}>Siguiente Balota</button>
-
+          {con=== 0 &&
+          <button className="nuevapartida" onClick={handleBalotas}>Empezar</button>
+          }
+          {con>0 &&<a href="/game" className="nuevapartida">Nueva Partida</a>}
           {con>0 && <h1>00:00:00 seg</h1>}
           <div className="balotas-container">
             {balotasA.map((el) => (
