@@ -17,6 +17,7 @@ export const Game = () => {
   const [id_new, setId_new] = useState(null);
   const [win,setWin] = useState(false);
   const [time, setTime] = useState(false);
+  
   const handleBalotas = () => {
     let id = 0;
     if (con === 75) return;
@@ -67,17 +68,17 @@ export const Game = () => {
   };
 
 
-  useEffect(() => {
-    if(con===75) return
-    if(con>0){
-      const interval = setInterval(()=>
-      handleBalotas()
-      ,5000)
-      return () => {
-        clearInterval(interval)
-      }
-    }
-  }, [con])
+  // useEffect(() => {
+  //   if(con===75) return
+  //   if(con>0){
+  //     const interval = setInterval(()=>
+  //     handleBalotas()
+  //     ,5000)
+  //     return () => {
+  //       clearInterval(interval)
+  //     }
+  //   }
+  // }, [con])
 
   return (
     <>
@@ -116,9 +117,8 @@ export const Game = () => {
             </div>
           </div>
 
-          {con===0 &&
-          <button onClick={handleBalotas}>Empezar</button>
-          }
+          <button onClick={handleBalotas}>Siguiente Balota</button>
+
           {con>0 && <h1>00:00:00 seg</h1>}
           <div className="balotas-container">
             {balotasA.map((el) => (
