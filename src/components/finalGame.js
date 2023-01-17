@@ -1,16 +1,13 @@
 import React from "react";
 
-export const FinalGame = () => {
+export const FinalGame = ({win, time}) => {
   return (
     <>
       <div className="gameover">
         <h1>¡JUEGO TERMINADO!</h1>
-        <p>tu puntaje fue de </p>
-        <h2>500pt</h2>
+        {win ? <p>¡felicitaciones, ganaste!</p>:<p>¡juego terminado, perdiste!</p>}
         <p>tu tiempo fue de</p>
-        <h2>00:00:43 seg</h2>
-        <p>Ranking</p>
-        <h2>5°</h2>
+        <h2>{time}</h2>
         <a
           className="btn-playAgain"
           href="/game"

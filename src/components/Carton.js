@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Carton = ({ player, carton, selectNumber, bingo}) => {
+export const Carton = ({ player, carton, select=()=>"", bingo}) => {
   return (
     <div className="carton-container">
       {/* CABECERA DEL CARTON DE BINGO */}
@@ -26,13 +26,13 @@ export const Carton = ({ player, carton, selectNumber, bingo}) => {
 
         </div>
 
-        <div onClick={bingo} className="bingo">
+        <div onClick={()=>bingo(carton)} className="bingo">
           ¡BINGO!
         </div>
 
         {carton.map((el) => (
           <div
-            onClick={() => selectNumber(el.id)}
+            onClick={() => select(el.id,carton)}
             key={el.id}
             className={el.selected ? "carton-casilla on" : "carton-casilla off"}
           >
